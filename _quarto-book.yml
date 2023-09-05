@@ -1,0 +1,39 @@
+project:
+  type: book
+  output-dir: _site
+  execute-dir: project
+  post-render:
+    - touch _site/.nojekyll
+execute:
+  freeze: auto
+book: 
+  title: {Replace Me}
+  author: Vincent Clemson
+  repo-url: https://github.com/prncevince/{replace-me}
+  reader-mode: true
+  repo-actions: [edit]
+  downloads: [pdf]
+  chapters: 
+    - index.qmd
+    - book/one.qmd
+format: 
+  html:
+    code-fold: true
+    code-link: true
+    code-tools:
+      source: repo
+    css: assets/css/style.css
+    grid:
+      body-width: 1100px
+      sidebar-width: 300px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    toc: true
+    toc-depth: 6
+    toc-expand: true
+  pdf:
+    execute:
+      echo: false
+    toc-depth: 6
+    margin-right: 10mm
+    margin-left: 10mm

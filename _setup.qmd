@@ -1,0 +1,19 @@
+```{r}
+#| label: setup-common
+#| echo: false
+library(knitr)
+options(dplyr.summarise.inform = FALSE)
+opts_hooks$set(fig.screen = function(options) {
+  mbp16_dpi <- 254/1.5
+  mbp16_width <- 3456
+  mbp16_height <- 2234
+  if (options$fig.screen == TRUE) {
+    options$dpi <- mbp16_dpi
+    options$fig.dim = c(mbp16_width/mbp16_dpi, mbp16_height/mbp16_dpi)
+  }
+  options
+})
+# compresses png output chunks
+knit_hooks$set(pngquant = hook_pngquant)
+opts_chunk$set(pngquant = '')
+```

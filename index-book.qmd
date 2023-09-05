@@ -1,0 +1,20 @@
+# Introduction {.unnumbered}
+
+{{< include _setup.qmd >}}
+
+```{r}
+#| label: setup-2
+#| include: false
+# here are things that don't break execution of code chunks b/c setup gets ran by default 
+# sets up a convention to extract chunk labels for loading cached chunks outside of rendering
+# if you don't have the most up to date list of labels for some reason, throw `stop()` below this line, then render
+if (!dir.exists('chunk-labels')) dir.create('chunk-labels')
+writeLines(knitr::all_labels(cache == TRUE), con = 'chunk-labels/index.txt')
+```
+
+```{r}
+#| label: packages
+#| echo: false
+suppressPackageStartupMessages({})
+```
+
